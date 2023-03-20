@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Import boostrp framework -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<!-- Navigation bar at the top -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">
+    <img src="images/cs_logo.png" width="50">
+  </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Courses</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Technologies
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">HTML </a>
+        <a class="dropdown-item" href="#">CSS </a>
+        <a class="dropdown-item" href="#">JavaScript </a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<!-- Navigation bar ends here -->
+<!-- Banner at the top(Jumbotron) -->
+<div class="jumbotron text-center">
+  <h1>Cybersquare - Design Your Website</h1>
+  <p>Users to creators of technology!</p> 
+</div><!-- End Jumbotron -->
+  
+<!-- Container class starts here. Normally in a bootstrap page contents are kept inside contaner division -->
+<div class="container">
+  <div class="row">
+    <!-- A bootstrap page is divided into 12 equal columns -->
+    <!-- col-sm-4 - Occupies 3 columns upto small sixze. Columns are stacked below this size. screen sizes are lg, md, sm and xs-->
+    <div class="col-sm-4">
+      <h3>HTML</h3><hr>
+      <p><img src="images/html.png" class="img-fluid "></p>
+      <p>Hypertext Markup Language is the standard markup language for documents designed to be displayed in a web browser.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>CSS</h3><hr>
+      <p><img src="images/css.png" class="img-fluid"></p>
+      <p>Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>JavaScript</h3><hr>        
+      <p><img src="images/javascript.png" class="img-fluid rounded"></p>
+      <p>JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

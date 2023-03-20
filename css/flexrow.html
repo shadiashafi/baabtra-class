@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        h1{
+            margin: 0;
+        }
+        .container{
+            background-color: blue;
+            height:400px;
+            width: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            /* flex-flow: row-reverse wrap; */
+           
+            
+            
+        }
+        .item1,.item2,.item3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid red;
+            padding: 10px;
+            text-align: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+            flex-basis: 100px;
+
+            
+
+        }
+        .item1{
+           /* order: 2;  */
+           /* flex:2; */
+           
+        }
+        .item2{
+            /* order: 3; */
+            /* flex:1; */
+        }
+        .item3{
+            /* order: 1; */
+            /* flex:4; */
+        }
+      /* .container div:nth-of-type(1)  {  flex-grow: 2; }
+      .container div:nth-of-type(2)  {  flex-grow: 1; }
+      .container div:nth-of-type(3)  {  flex-grow: 3; } */
+      /* .container div:nth-of-type(2)  {  flex-grow: 1; } */
+      .container div:nth-of-type(2)  {  flex-shrink: 5; }
+       
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item1"><h1>Section 1</h1></div>
+        <div class="item2"><h1>Section 2</h1></div>
+        <div class="item3"><h1>Section 3</h1></div>
+        <!-- <div class="item2"><h1>Section 2</h1></div>
+        <div class="item3"><h1>Section 3</h1></div> -->
+        
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 500px;
+            width: 200px;
+            /* background-color: yellow; */
+            border: 2px solid red;
+            display: flex;
+        }
+
+        
+
+        #container div {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 100px;
+
+        }
+
+        #container div:nth-of-type(2) {
+            flex-shrink: revert;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="section1" style="background-color: blueviolet;">Sect1</div>
+        <div class="section2" style="background-color: yellow;">Sect2</div>
+        <div class="section3" style="background-color: green;">Sect3</div>
+        <div class="section4" style="background-color: orange;">Sect4</div>
+        <!-- <div class="section5" style="background-color: orangered;">Sect5</div> -->
+    </div>
+</body>
+
+</html>
