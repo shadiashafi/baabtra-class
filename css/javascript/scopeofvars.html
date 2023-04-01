@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      outside = "i am global";
+      var outside_var = "i am also global";
+      function test_scope(fn_parameter) {
+        inside = "i am inside but global";
+        var inside_var = "local to function";
+        console.log("values inside the function");
+        console.log("outside:" + outside);
+        console.log("outside_var:" + outside_var);
+        console.log("inside:" + inside);
+        console.log("inside_var:" + inside_var);
+        console.log("function parameter:" + fn_parameter);
+      }
+      test_scope("i am a parameter");
+
+      console.log("values outside the function");
+      console.log("outside:" + outside);
+      console.log("outside_var:" + outside_var);
+      console.log("inside:" + inside);
+    //   console.log("inside_var:" + inside_var);
+      console.log("function parameter:" + fn_parameter);
+    </script>
+  </body>
+</html>
