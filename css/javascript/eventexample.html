@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+
+    <input type="button" onClick="clickEvent()" value="Click"><br>
+    <input type="text" id="input1" onFocus="focusEvent()"><br>
+    <input type="text" id="input2" onKeyDown="keyDownEvent()">
+    
+    <script>
+        function clickEvent(){
+            document.write("clicked");
+        }
+        function focusEvent(){
+            document.getElementById("input1").style.background="yellow";
+        }
+        function keyDownEvent(){
+            document.getElementById("input2");
+            alert("clicked");
+        }
+    </script>
+</body>
+</html>

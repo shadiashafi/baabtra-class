@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Lorem, ipsum dol amet consectetur</h1>
+    <p class="content">Lorem ipsum dolor sit amet.</p>
+    <p class="content">Lorem ipsum dolor sit amet consectetur.</p>
+    <button onClick="change()">Clickme</button>
+
+    
+
+    <script>
+        console.log(document.getElementById('heading'));
+        console.log(document.getElementsByTagName('p'));
+        console.log(document.getElementsByClassName('content'));
+
+        function change(){
+            document.getElementById('heading').innerHTML="Lorem, ipsum dolor." ;
+
+        }
+
+    </script>
+    
+</body>
+</html>
