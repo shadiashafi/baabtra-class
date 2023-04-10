@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <table border="1" width="200px" height="200px">
+        <tr>
+            <td colspan="3"><input type="text" id="result">
+            </td> 
+            <td><button onclick="clearscreen()">Clear</button></td>
+            
+        </tr>
+        <tr>
+            <td><button onclick="display('1')">1</button></td>
+            <td><button onclick="display('2')">2</button></td>
+            <td><button onclick="display('3')">3</button></td>
+            <td><button onclick="display('/')">/</button></td>
+            
+        </tr>
+
+        <tr>
+            <td><button onclick="display('4')">4</button></td>
+            <td><button onclick="display('5')">5</button></td>
+            <td><button onclick="display('6')">6</button></td>
+            <td><button onclick="display('-')">-</button></td>
+            
+        </tr>
+        <tr>
+            <td><button onclick="display('7')">7</button></td>
+            <td><button onclick="display('8')">8</button></td>
+            <td><button onclick="display('9')">9</button></td>
+            <td><button onclick="display('+')">+</button></td>
+            
+        </tr>
+        <tr>
+            <td><button onclick="display('.')">.</button></td>
+            <td><button onclick="display('0')">0</button></td>
+            <td><button onclick="calculate()">=</button></td>
+            <td><button onclick="display('*')">*</button></td>
+            
+        </tr>
+
+    </table>
+    
+    <script>
+        function clearscreen(){
+            document.getElementById("result").value="";
+        }
+        function display(val){
+            document.getElementById("result").value+=val;
+        }
+        function calculate(){
+           var val=document.getElementById("result").value;
+           var res=eval(val);
+           document.getElementById("result").value=res;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Select color:</label>
+    <select name="" id="color" onchange="change_color(this)">
+        <option value="red">RED</option>
+        <option value="green">GREEN</option>
+        <option value="blue">BLUE</option>
+    </select>
+    <br><br>
+    <label for="">Color Display:</label>
+    <div id="color_display" style="width:100px; height:100px;"></div>
+    
+    <script>
+       function change_color(event){
+        // var color=document.getElementById('color').value;
+        var color=event.value;
+        document.getElementById('color_display').style.backgroundColor=color;
+    }
+
+    </script>
+</body>
+</html>

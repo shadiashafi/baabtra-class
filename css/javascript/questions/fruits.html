@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="list_fruit" onchange="fruit_selected(this)">
+        <option value="mango">Mango</option>
+        <option value="apple">Apple</option>
+        <option value="pineapple">Pineapple</option>
+        <option value="kiwi">Kiwi</option>
+        <option value="orange">Orange</option>
+        <option value="strawberry">Strawberry</option>
+        <option value="rambutan">Rambutan</option>
+        <option value="mangosteen">Mangosteen</option>
+        
+        
+    </select>
+    <div id="result"></div>
+    <br><br>
+    <button onclick="delete_fruit()">Submit</button>
+    <script>
+      
+         var fruits=['mango','apple','pineapple','kiwi','strawberry','rambutan','mangosteen'];
+        function fruit_selected(e){
+           var checked_fruit = e.value;
+            // alert(checked_fruit);
+          document.getElementById("result").value=checked_fruit;
+        // alert(document.getElementById("result").value);
+       
+        }
+       
+        function delete_fruit(){
+            //alert(document.getElementById("result").value);
+          var res= document.getElementById("list_fruit").value;
+        //    alert(res);
+        for(var i=0;i<fruits.length;i++){
+            if (fruits[i]==res){
+               fruits.splice(i,1);
+               
+            }
+           
+            
+        }
+        alert(fruits);
+        }
+    </script>
+    
+</body>
+</html>
