@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Enter a Task :</label>
+    <input type="text" id="task" />
+    <br /><br />
+    <label for="">Description :</label>
+    <textarea id="desc" cols="30" rows="10"></textarea>
+    <br /><br />
+    <button type="submit" id="sub_btn" onClick="addTask()">Add Task</button>
+    <br /><br />
+
+    <table id="task_table" border="2" width="1000px">
+      <tr>
+        <th width="5%">SL. No</th>
+        <th width="20%">TASK</th>
+        <th width="30%">DESCRIPTION</th>
+        <th width="10%">DATE</th>
+        <th width="35%">STATUS</th>
+      </tr>
+    </table>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <label for="">task</label>
+            <input type="text" id="edit_task" />
+            <br />
+            <label for="">description</label>
+            <input type="text" id="edit_desc" />
+            <br />
+            <input type="text" hidden id="trid" />
+          </div>
+          <div></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              id="editbtn"
+              onclick="edit()"
+              class="btn btn-default"
+              data-dismiss="modal"
+            >
+              submit
+            </button>
+            <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let i = 0;
+
+      function addTask() {
+        const date = new Date();
+        console.log(date);
+        var task = document.getElementById("task").value;
+        var desc = document.getElementById("desc").value;
+        var table = document.getElementById("task_table");
+
+        var row = table.insertRow();
+        row.setAttribute("id", "row" + i);
+
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+
+        cell1.innerHTML = i + 1;
+        cell2.innerHTML = task;
+        cell3.innerHTML = desc;
+        cell4.innerHTML = date.toDateString();
+
+        var btn = document.createElement("BUTTON");
+        btn.innerHTML = "COMPLETE";
+        btn.onclick = function complete() {
+          cell5.innerHTML = "COMPLETED";
+          btn.disabled = true;
+        };
+        cell6.appendChild(btn);
+
+        var delete_btn = document.createElement("BUTTON");
+        delete_btn.innerHTML = "DELETE";
+        delete_btn.addEventListener("click", function handleClick(event) {
+          del_id = event.target.parentElement.parentElement.id;
+          element = document.getElementById(del_id);
+          element.remove();
+        });
+
+        cell7.appendChild(delete_btn);
+
+        var edit_btn = document.createElement("BUTTON");
+        edit_btn.innerHTML = "EDIT";
+        edit_btn.setAttribute("data-toggle", "modal");
+        edit_btn.setAttribute("data-target", "#myModal");
+        edit_btn.addEventListener("click", function handleEdit(event) {
+          ed_id = event.target.parentElement.parentElement.id;
+          ed_list = document.getElementById(ed_id).childNodes;
+          console.log(ed_list);
+          document.getElementById("edit_task").value = ed_list[1].innerHTML;
+          document.getElementById("edit_desc").value = ed_list[2].innerHTML;
+        });
+
+        cell8.appendChild(edit_btn);
+
+        i++;
+      }
+
+      function edit() {
+        var task = document.getElementById("edit_task").value;
+        var desc = document.getElementById("edit_desc").value;
+        td_list = document.getElementById(ed_id).childNodes;
+        td_list[1].innerHTML = task;
+        td_list[2].innerHTML = desc;
+        td_list[3].innerHTML = new Date().toDateString();
+      }
+    </script>
+  </body>
+</html>

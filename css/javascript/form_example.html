@@ -1,25 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validation</title>
-</head>
-<body>
-<form action="">
-    <label for="">Name:</label>
-    <input type="text" id="name" placeholder="Enter your name"><br>
-    <label for="">Email</label>
-    <input type="text" id="email" placeholder="Enter your Email"><br>
-    <label for="">Mobile</label>
-    <input type="text" id="mobile" placeholder="Enter your Mobile No"><br>
-    <label for="">Password</label>
-    <input type="password" id="pass" placeholder="Enter your Password"><br>
-    <label for="">Address</label>
-    <textarea id="address"></textarea><br>
-    <input type="submit" value="Submit">
+  </head>
+  <body>
+    <form action="">
+      <label for="">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" /><br /><br />
+      <span id="s_name"></span><br /><br />
+      <label for="">Email</label>
+      <input type="text" id="email" placeholder="Enter your Email" /><br /><br />
+      <span id="s_email"></span><br /><br />
+      <label for="">Mobile</label>
+      <input type="text" id="mobile" placeholder="Enter your Mobile No" /><br /><br />
+      <span id="s_mobile"></span><br /><br />
+      <label for="">Password</label>
+      <input
+        type="password"
+        id="pass"
+        placeholder="Enter your Password"
+      /><br /><br />
+      <span id="s_pass"></span><br /><br />
+      <label for="">Address</label>
+      <textarea id="address"></textarea><br /><br />
+      <span id="s_addr"></span><br /><br />
+      <input type="button" value="Submit" onclick="validate()" />
+    </form>
+    <script>
+      function validate() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var mob = document.getElementById("mobile").value;
+        var pass = document.getElementById("pass").value;
+        var addr = document.getElementById("address").value;
+        var span_name = document.getElementById("s_name");
+        var span_email = document.getElementById("s_email");
+        var span_mob = document.getElementById("s_mobile");
+        var span_pass = document.getElementById("s_pass");
+        var span_addr = document.getElementById("s_addr");
 
-</form>    
-</body>
+        status = 1;
+
+        if (name == "") {
+          status = 0;
+          span_name.style.display = "block";
+          span_name.innerHTML = "please enter your name";
+          span_name.style.color = "red";
+        } else {
+          status = 1;
+          span_name.style.display = "none";
+        }
+
+        if (email == "") {
+          status = 0;
+          span_email.style.display = "block";
+          span_email.innerHTML = "please enter your email";
+          span_email.style.color = "red";
+        } else {
+          status = 1;
+          span_email.style.display = "none";
+        }
+
+        if (mob == "") {
+          status = 0;
+          span_mob.style.display = "block";
+          span_mob.innerHTML = "please enter your mobile";
+          span_mob.style.color = "red";
+        } else {
+          status = 1;
+          span_mob.style.display = "none";
+        }
+
+        if (pass == "") {
+          status = 0;
+          span_pass.style.display = "block";
+          span_pass.innerHTML = "please enter your Password";
+          span_pass.style.color = "red";
+        } else {
+          status = 1;
+          span_pass.style.display = "none";
+        }
+
+        if (addr == "") {
+          status = 0;
+          span_addr.style.display = "block";
+          span_addr.innerHTML = "please enter your address";
+          span_addr.style.color = "red";
+        } else {
+          status = 1;
+          span_addr.style.display = "none";
+        }
+
+        
+        if(status==0){
+            return false;
+        }
+
+
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="spreadop.js"></script>
+  </head>
+  <body>
+    <script>
+      const language = ['python','java','javascript'];
+      let[l1,,l2,l3] = language;
+      l1 = language[0];
+      l2 = language[1];
+      l3 = language[2];
+
+      console.log(language);
+      console.log(l1);
+      console.log(l2);
+      console.log(l3);
+
+      const employee = {
+        name: 'john',
+        age: 25,
+        designation: 'Programmer',
+        department: 'IT'
+      };
+
+      const {name, age, designation, department}= employee;
+      console.log(name,age,designation,department);
+      
+      </script>
+  </body>
+</html>
