@@ -7,6 +7,30 @@
     <title>Document</title>
 </head>
 <body>
+    <span id="res"></span>
+  
+    <script>
+    
+    function digits_count(num){
+        //var num=prompt("enter the number:");
+        var count=0;
+        if(num>1){
+            ++count;
+            while(num/10>=1){
+                num=num/10;
+                ++count;
+
+            }
+            //document.getElementById("res").innerHTML=count;
+            alert(count);
+        }
+        
+     }
+     console.log(digits_count(123455));
+     console.log(digits_count(234));
+     
+
+    </script>
     
 </body>
 </html>

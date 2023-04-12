@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function lagernum(num){
+            large_num=0;
+            while(num>0){
+                large_num=Math.max(num%10,large_num)
+                num=num/10; 
+            }
+            return parseInt(large_num);
+        }
+        console.log(lagernum(69758));
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="classexample.js"></script>
+</head>
+<body>
+
+    <br><br><br>
+    <script>
+
+        console.log('\n');
+        productname1="monitor";
+        productprice1="5000";
+        productname2="keyboard";
+        productprice2="500";
+        function printDetails(arg1,arg2){
+            console.log(`name: ${arg1} and price: ${arg2}`);
+        }
+        printDetails(productname1,productprice1);
+
+        product1={
+            name:"motherboard",
+            price:"7000",
+            printDet(){
+                console.log(`${this.name} costs ${this.price}`);
+            }
+
+        };
+
+        product2={
+            name:"mouse",
+            price:"200",
+            printDet(){
+                console.log(`${this.name} costs ${this.price}`);
+            }
+
+        };
+
+        console.log(product1);
+        console.log(product1.name);
+        console.log(product2["name"]);
+        product1.printDet();
+        product2.printDet();
+        product1.size = "14 inch";
+        console.log(product1);
+
+        class Product{
+            constructor(name,price){
+                this.name=name;
+                this.price=price;
+            }
+
+            printDetails() {
+                console.log(`${this.name} costs ${this.price}`);  
+            }
+        };
+
+        p1 = new Product("monitor","5000");
+        console.log(p1);
+        console.log(p1.name + " " + p1.price);
+        p1.printDetails();
+
+
+
+    </script>
+    
+</body>
+</html>
