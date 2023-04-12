@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="password" id="pass"><br>
+    <span id="result"></span><br>
+    <button onclick="check_pass()">Check</button>
+    <script>
+        function check_pass(){
+        var pass=document.getElementById('pass').value;
+        var reqexp="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/";
+        if(pass.match(reqexp)){
+            document.getElementById('result').innerHTML="password valid";
+        }
+        else
+        document.getElementById('result').innerHTML="password invalid";
+    }
+
+    </script>
+
+    
+</body>
+</html>
