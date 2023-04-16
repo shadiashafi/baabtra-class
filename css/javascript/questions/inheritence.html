@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //inheritence
+        class Category{
+            constructor(category){
+                this.category=category;
+            }
+
+            display_category(){
+                return this.category;
+            }
+        }
+
+        class Product extends Category{
+            static count = 0;
+            constructor(name,category,price){
+                super(category);
+                this.name = name;
+                this.price = price;
+                Product.count = Product.count+1;
+            }
+
+            display_product(){
+                console.log("Name:"+this.name);
+                console.log("Category:"+this.display_category());
+                console.log("Price:"+this.price);
+
+            }
+            product_count(){
+                console.log("Product count:"+Product.count);
+            }
+
+        }
+
+        product1 = new Product("Pen","Accessory",700);
+        product1.display_product();
+        product1.product_count(); 
+
+
+        //access specifiers : private property
+
+        function Person(name,age){
+            let _name = name;
+            let _age = age;
+
+            this.getName = function(){
+                return _name;
+            }
+
+            this.getAge = function(){
+                return _age;
+            }
+
+            this.welcome = function(){
+                console.log(`my name is ${_name} and i am ${_age} years old!`);
+
+            }
+        }
+
+        const p1 = new Person("abc",24); 
+        console.log(p1.getName());
+        console.log(p1.getAge());
+      //  console.log(p1._name);
+       console.log(p1._age);
+
+
+       //inheritence example
+
+       class Animal{
+        constructor(name){
+            this.name = name;
+        }
+
+        speak(){
+            console.log(`this ${this.name} makes a noise! `);
+        }
+
+       }
+
+       class Dog extends Animal{
+
+        constructor(name){
+            super(name);
+
+        }
+
+        speak(){
+            console.log(`this ${this.name} barks! `);
+        }
+       }
+        
+        let dog1 = new Dog("Tommy");
+        dog1.speak();
+        let animal1 = new Animal("Cat");
+        animal1.speak();
+
+
+        //polymorphism
+
+        class Shape{
+            calculateArea(){
+                console.log("Calculating area of a shape");
+            }
+        }
+
+
+        class Circle extends Shape{
+            constructor(radius){
+                super();
+                this.radius = radius;
+            }
+
+            calculateArea(){
+                console.log("Calculating area of a circle with radius:"+this.radius);
+                return Math.PI * (this.radius*this.radius);
+               
+
+            }
+        }
+
+        class Square extends Shape{
+            constructor(length){
+                super();
+                this.length = length;
+            }
+
+            calculateArea(){
+                
+                console.log("Calculating area of a square with length:"+this.length);
+                return this.length * this.length;
+                //console.log("Area is:"+res);
+            }
+            
+        }
+
+        shape1 = new Shape();
+        circle1 = new Circle(2);
+        square1 = new Square(20);
+        shape1.calculateArea();
+        const circleArea = circle1.calculateArea();
+        const sqArea = square1.calculateArea();
+        console.log("Area of circle:"+circleArea);
+        console.log("Area of square:"+sqArea);
+        
+     // polymorphism example
+
+     class Employee{
+        constructor(salary){
+            this.salary = salary;
+        }
+
+        calcSalary(){
+            console.log(this.salary+(this.salary*10)/100);
+        }
+
+     }
+
+     class Manager extends Employee
+    {
+        constructor(salary){
+        super(salary);
+        }
+
+        calcSalary(){
+            console.log(this.salary+(this.salary*50)/100);  
+        }
+    }
+       
+    e1 = new Employee(1000);
+    m1 = new Manager(1000);
+    e1.calcSalary();
+    m1.calcSalary();
+    </script>
+    
+</body>
+</html>
