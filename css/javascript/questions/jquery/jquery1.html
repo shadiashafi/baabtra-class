@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="../jquery/jquery-3.6.4.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      div {
+        display: none;
+        height: 100px;
+        width: 300px;
+      }
+      #div1 {
+        background-color: red;
+        border: 1px solid black;
+      }
+
+      #div2 {
+        background-color: blueviolet;
+        border: 1px solid black;
+      }
+
+      #div3 {
+        background-color: greenyellow;
+        border: 1px solid black;
+      }
+
+      #div4 {
+        background-color: orange;
+        border: 1px solid black;
+      }
+
+      #div5 {
+        display: block;
+        background-color: yellowgreen;
+        border: 1px solid black;
+        position:absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus cum,
+      molestiae aliquid dolorem nobis blanditiis fugiat esse alias ullam
+      corrupti!
+    </p>
+    <p id="para1">Lorem ipsum dolor sit.</p>
+    <p class="para2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia debitis
+      doloribus tempore ipsum odit eveniet, facere et beatae facilis officiis
+      suscipit repellat itaque nesciunt quisquam quod nam omnis recusandae
+      perferendis.
+    </p>
+    <br />
+    <img
+      src="https://picsum.photos/200/300"
+      alt="Image"
+      height="200px"
+      width="200px"
+    />
+    <br />
+    <button id="set_img" type="button">Set width and height of image</button
+    ><br /><br />
+    <button id="hide_btn" type="button">Hide</button>
+    <button id="show_btn" type="button">Show</button>
+    <button id="toggle_btn" type="button">Toggle</button>
+
+    <br /><br />
+
+    <button id="fadein_btn" type="button">FadeIn</button>
+    <button id="fadeout_btn" type="button">FadeOut</button>
+    <button id="fadetoggle_btn" type="button">FadeToggle</button>
+    <button id="fadeto_btn" type="button">FadeTo</button><br><br>
+
+    <button id="slidedown_btn" type="button">SlideDown</button>
+    <button id="slideup_btn" type="button">SlideUp</button>
+    <button id="slidetoggle_btn" type="button">SlideToggle</button>
+    
+    <br><br>
+
+    <button id="animate_btn" type="button">Animate</button>
+    
+    <br><br>
+
+    <div id="div1"></div>
+    <br /><br />
+    <div id="div2"></div>
+    <br /><br />
+    <div id="div3"></div>
+    <br /><br />
+    <div id="div4"></div>
+    <br /><br />
+    <div id="div5"></div>
+    <br /><br />
+
+    <script>
+      $(document).ready(function () {
+        //  $("p").css("background-color","blue");
+        //   $("p").css({"background-color":"red","color":"white","font-size":"50px"});
+        $("#para1").css({ color: "green", "font-size": "25px" });
+        $(".para2").css("color", "orange");
+
+        $(".para2").click(function () {
+          $(this).hide();
+          $("#para1").css({
+            border: "1px solid red",
+            "background-color": "yellow",
+            color: "green",
+            "font-size": "20px",
+          });
+        });
+
+        $("#para1").dblclick(function () {
+          $(this).css("color", "blue");
+        });
+
+        $("#set_img").click(function () {
+          $("img").attr({
+            width: "400px",
+            height: "400px",
+          });
+        });
+
+        $("#hide_btn").click(function () {
+          $("#para1").hide();
+        });
+
+        $("#show_btn").click(function () {
+          $("#para1").show();
+        });
+
+        $("#toggle_btn").click(function () {
+          $("#para1").toggle();
+        });
+
+        $("#fadein_btn").click(function () {
+          $("#div1").fadeIn();
+          $("#div2").delay("slow").fadeIn();
+          $("#div3").delay(5000).fadeIn();
+          $("#div4").fadeIn(3000);
+          $("#div4").fadeIn("fast");
+        });
+
+        $("#fadeout_btn").click(function () {
+          $("#div1").fadeOut();
+          $("#div2").delay("slow").fadeOut();
+          $("#div3").delay(5000).fadeOut();
+          $("#div4").fadeOut(3000);
+          $("#div4").fadeOut("fast");
+        });
+
+        $("#fadetoggle_btn").click(function () {
+          $("#div1").fadeToggle();
+          $("#div2").delay("slow").fadeToggle();
+          $("#div3").delay(5000).fadeToggle();
+          $("#div4").fadeToggle(3000);
+          $("#div4").fadeToggle("fast");
+        });
+
+        $("#fadeto_btn").click(function(){
+            $("#div1").fadeTo("slow",0.1);
+            $("#div2").fadeTo(4000,0.4);
+            
+
+        })
+
+        $("#slidedown_btn").click(function(){
+            $("#div1").slideDown(3000);
+        })
+
+        $("#slideup_btn").click(function(){
+            $("#div1").slideUp(3000);
+        })
+
+        $("#slidetoggle_btn").click(function(){
+            $("#div1").slideToggle(3000);
+        })
+
+        $("#animate_btn").click(function(){
+            // $("#div5").animate({
+            //     "left":"100px"
+            // })
+            // .delay(2000)
+            // .animate({
+            //     "top" : "100px"
+            // })
+                
+            $("#div5").animate({
+                "height":"500px",
+                "width" : "600px"
+            },{
+                duration:5000,
+                easing:"linear",
+                complete:function(){
+                    $(this).after("<p>Animation is complete</p>")
+                }
+            }
+            )
+
+        })
+      });
+    </script>
+  </body>
+</html>

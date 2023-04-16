@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Animal{
+            constructor(name){
+                this.name = name;
+            }
+            makeSound(){
+                console.log("method make sound must be implemented");
+            }
+            move(){
+                console.log("move must be implemented");
+            }
+        }
+
+        class Dog extends Animal{
+            constructor(name){
+                super(name);
+            }
+
+            makeSound(){
+                return "woof!";
+            }
+
+            move(){
+                return "walking";
+            }
+        }
+
+        class Bird extends Animal{
+            constructor(name){
+                super(name);
+            }
+
+            makeSound(){
+                return "chirp!";
+            }
+
+            move(){
+                return "flying";
+            }
+        }
+
+        const dog = new Dog('Tommy');
+        const bird = new Bird('Birdy');
+
+        console.log(`${dog.name} says ${dog.makeSound()}`);
+        console.log(`${dog.name} is ${dog.move()}`);
+        console.log(`${bird.name} says ${bird.makeSound()}`);
+        console.log(`${bird.name} is ${bird.move()}`);
+        
+    </script>
+</body>
+</html>
